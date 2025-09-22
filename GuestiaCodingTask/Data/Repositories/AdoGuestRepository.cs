@@ -18,8 +18,7 @@ namespace GuestiaCodingTask.Data.Repositories
                 select g.Id, g.FirstName, g.LastName, g.RegistrationDate, gg.Id, gg.Name as GroupName
                 from Guests g
                 inner join GuestGroups gg
-                on gg.Id = g.GuestGroupId
-                where g.RegistrationDate is null";
+                on gg.Id = g.GuestGroupId";
 
             await using var connection = new SqlConnection(_connectionString);
             await connection.OpenAsync();
